@@ -1,0 +1,407 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "R-lecture-2-basic-data-type.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "ir",
+      "display_name": "R"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "G8Ly7MjtFsb8"
+      },
+      "source": [
+        "R มีรูปแบบการเก็บข้อมูลพื้นฐานดังต่อไปนี้\n",
+        "\n",
+        "1.   character (เก็บอักษร และข้อความ)\n",
+        "2.   numeric (จำนวนจริง REAL, จำนวนทศนิยม Decimal )\n",
+        "3.   integer (จำนวนเต็ม ...,-3,-2,-1,0,1,2,3,...)\n",
+        "4.   logical (ค่าตรรกศาศตร์)\n",
+        "5.   complex (จำนวนจินตภาพ Imaginary number)\n",
+        "\n",
+        "โดยสามารถประกาศตัวแปลด้วยวิธี `<-` ดังตัวอย่างต่อไปนี้\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6Ax0AyyAGu3m",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b0cee09c-ecad-4345-8ad1-7c80e3276a0f"
+      },
+      "source": [
+        "a <- \"This is a character\"\n",
+        "b <- 1.5\n",
+        "c <- 5\n",
+        "d <- FALSE # ใช้ TRUE หริอ FALSE ตัวใหญ่\n",
+        "e <- 1+5i\n",
+        "\n",
+        "###### ลองแสดงผลดู\n",
+        "print(a)\n",
+        "print(b)\n",
+        "print(c)\n",
+        "print(d)\n",
+        "print(e)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[1] \"This is a character\"\n",
+            "[1] 1.5\n",
+            "[1] 5\n",
+            "[1] FALSE\n",
+            "[1] 1+5i\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kk3IXWSYPr7T"
+      },
+      "source": [
+        "ลองทำการตรวจสอบประเภทของแต่ละค่า ด้วยคำสั่ง `typeof()`"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        },
+        "id": "uEFa9WSWQPCb",
+        "outputId": "7f6eef46-bc3c-49b8-d651-61c4c11b0317"
+      },
+      "source": [
+        "typeof(a)\n",
+        "typeof(b)\n",
+        "typeof(c)\n",
+        "typeof(d)\n",
+        "typeof(e)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"character\""
+            ],
+            "text/latex": "'character'",
+            "text/markdown": "'character'",
+            "text/html": [
+              "'character'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"double\""
+            ],
+            "text/latex": "'double'",
+            "text/markdown": "'double'",
+            "text/html": [
+              "'double'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"double\""
+            ],
+            "text/latex": "'double'",
+            "text/markdown": "'double'",
+            "text/html": [
+              "'double'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"logical\""
+            ],
+            "text/latex": "'logical'",
+            "text/markdown": "'logical'",
+            "text/html": [
+              "'logical'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"complex\""
+            ],
+            "text/latex": "'complex'",
+            "text/markdown": "'complex'",
+            "text/html": [
+              "'complex'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "2cGE3uEZrc8t"
+      },
+      "source": [
+        "ลองทำการตรวบสองประเภทของแต่ละค่าด้วย `class()`"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        },
+        "id": "UKukEKITrKAf",
+        "outputId": "df64036b-b0b0-424c-8d15-f8806e6865e1"
+      },
+      "source": [
+        "class(a)\n",
+        "class(b)\n",
+        "class(c)\n",
+        "class(d)\n",
+        "class(e)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"character\""
+            ],
+            "text/latex": "'character'",
+            "text/markdown": "'character'",
+            "text/html": [
+              "'character'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"numeric\""
+            ],
+            "text/latex": "'numeric'",
+            "text/markdown": "'numeric'",
+            "text/html": [
+              "'numeric'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"numeric\""
+            ],
+            "text/latex": "'numeric'",
+            "text/markdown": "'numeric'",
+            "text/html": [
+              "'numeric'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"logical\""
+            ],
+            "text/latex": "'logical'",
+            "text/markdown": "'logical'",
+            "text/html": [
+              "'logical'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"complex\""
+            ],
+            "text/latex": "'complex'",
+            "text/markdown": "'complex'",
+            "text/html": [
+              "'complex'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VbYZrM61rubm"
+      },
+      "source": [
+        "จะเห็นว่า b และ c มีค่า `typeof()` และ `class()` มีค่าที่เหมือนกัน ซึ่ง c ที่เราระบุไปว่า 5 ซึ่งควรจะเป็น integer แต่ typeof(c) กลับมองว่าเป็น double หากต้องการให้ค่า ของ c เป็น `typeof()` integer ก็เพิ่ม L ตามท้ายไปดังต่อไปนี้ "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 121
+        },
+        "id": "d4Nr0WAa7uf4",
+        "outputId": "2531c178-8389-4892-f77a-af3dabef3405"
+      },
+      "source": [
+        "c <- 5\n",
+        "print(c)\n",
+        "typeof(c)\n",
+        "class(c)\n",
+        "\n",
+        "#############\n",
+        "c <- 6L\n",
+        "print(c)\n",
+        "typeof(c)\n",
+        "class(c)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[1] 5\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"double\""
+            ],
+            "text/latex": "'double'",
+            "text/markdown": "'double'",
+            "text/html": [
+              "'double'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"numeric\""
+            ],
+            "text/latex": "'numeric'",
+            "text/markdown": "'numeric'",
+            "text/html": [
+              "'numeric'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "stream",
+          "text": [
+            "[1] 6\n"
+          ],
+          "name": "stdout"
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"integer\""
+            ],
+            "text/latex": "'integer'",
+            "text/markdown": "'integer'",
+            "text/html": [
+              "'integer'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "[1] \"integer\""
+            ],
+            "text/latex": "'integer'",
+            "text/markdown": "'integer'",
+            "text/html": [
+              "'integer'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    }
+  ]
+}
